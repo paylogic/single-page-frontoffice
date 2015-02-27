@@ -1,0 +1,29 @@
+// Name: Functions
+// Description: Custom less functions
+//
+// ========================================================================
+
+/*
+ * Box shadow
+ */
+
+.box-shadow(@style, @c) when (iscolor(@c)) {
+    -webkit-box-shadow: @style @c;
+    box-shadow: @style @c;
+}
+
+.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
+    .box-shadow(@style, rgba(0, 0, 0, @alpha));
+}
+
+/*
+ * Text shadow
+ */
+
+.text-shadow(@style, @c) when (iscolor(@c)) {
+    text-shadow: @style @c;
+}
+
+.text-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
+    .text-shadow(@style, rgba(0, 0, 0, @alpha));
+}

@@ -1,0 +1,31 @@
+// Name: Responsive
+// Description: Extra style definitions for responsive version
+//
+// ========================================================================
+
+@media (max-width: @breakpoint-medium) {
+
+    .uk-container {
+        padding: 0;
+        margin-top: 0 !important;
+    }
+
+    .uk-grid-divider:not(:empty) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .uk-grid-divider > * {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    footer {
+        padding: 0 @panel-box-padding;
+    }
+
+    .back-button {
+        margin-left: @utility-margin;
+    }
+
+}

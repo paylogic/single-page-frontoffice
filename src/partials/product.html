@@ -1,0 +1,21 @@
+<div class="uk-panel">
+  <h3 ng-if="content.name | localize" ng-bind="content.name | localize" class="uk-panel-title uk-width-2-3 uk-margin-bottom-remove uk-text-bold"></h3>
+  <div ng-if="content.subtitle | localize" ng-bind="content.subtitle | localize"></div>
+  <div class="uk-grid uk-grid-small uk-grid-width-1-2 uk-margin-top price-quantity">
+    <div ng-if="content.price.amount" ng-bind="content.price | price" class="uk-text-bold"></div>
+    <div ng-if="!content.sold_out && !placingOrder" class="uk-text-right">
+      <a ng-if="quantities[content._links.self.href]" ng-click="product.decreaseQty()" class="uk-button uk-button-link uk-button-mini" translate>Remove</a>
+      <a ng-click="product.increaseQty()" class="uk-button uk-button-success" translate>Add</a>
+    </div>
+    <div ng-if="content.sold_out" class="uk-text-right uk-text-small">
+      <div ng-if="content.sold_out_text | localize" ng-bind="content.sold_out_text | localize"></div>
+      <button ng-if="!(content.sold_out_text | localize)" class="uk-button uk-button-small" disabled translate>Sold out</button>
+    </div>
+  </div>
+  <div ng-if="product.showPrice" class="uk-panel-badge uk-badge uk-badge-notification">
+    <span ng-bind="quantities[content._links.self.href]" ng-class="{'uk-float-left product-quantity':content.price.amount > 0}"></span>
+    <span ng-if="content.price.amount > 0" ng-bind="content.price | price:quantities[content._links.self.href]" class="uk-margin-small-left uk-float-left product-total"></span>
+  </div>
+  <div ng-if="product.showLoading" class="uk-text-small uk-panel-badge"><img src="images/loader.gif" width="18" height="18" /></div>
+  <div ng-if="content.sold_out" class="uk-panel-badge uk-badge uk-badge-notification badge-disabled"><i class="uk-icon-check"></i></div>
+</div>

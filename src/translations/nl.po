@@ -1,0 +1,169 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Orestis Ioakeimidis <o.ioakeimidis@gmail.com>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: index.html:42
+msgid "2015 Paylogic. All rights reserved."
+msgstr "2015 Paylogic. Alle rechten voorbehouden."
+
+#: product.html:8
+msgid "Add"
+msgstr "Optellen"
+
+#: personal_info.html:57
+msgid "Address"
+msgstr "Adres"
+
+#: event.html:61
+msgid "Back to events list"
+msgstr "Terug naar de lijst gebeurtenissen"
+
+#: eventList.html:38
+msgid "Buy tickets"
+msgstr "Kaartjes kopen"
+
+#: personal_info.html:75
+msgid "City"
+msgstr "City"
+
+#: personal_info.html:104
+msgid "Confirm and procceed"
+msgstr "Bevestigen en procceed"
+
+#: personal_info.html:87
+msgid "Country"
+msgstr "Land"
+
+#: personal_info.html:22
+msgid "Date of birth"
+msgstr "Geboortedatum"
+
+#: personal_info.html:44
+msgid "Email address"
+msgstr "Email adres"
+
+#: overview.html:15
+#: overview.html:30
+#: personal_info.html:15
+#: personal_info.html:25
+#: personal_info.html:39
+#: personal_info.html:47
+#: personal_info.html:60
+#: personal_info.html:68
+#: personal_info.html:7
+#: personal_info.html:78
+#: personal_info.html:92
+msgid "Field is required"
+msgstr "Veld is verplicht"
+
+#: personal_info.html:4
+msgid "First name"
+msgstr "Voornaam"
+
+#: personal_info.html:34
+msgid "Gender"
+msgstr "Geslacht"
+
+#: overview.html:59
+msgid "Grand total"
+msgstr "Algemeen totaal"
+
+#: personal_info.html:12
+msgid "Last name"
+msgstr "Achternaam"
+
+#: event.html:4
+msgid "Loading event data..."
+msgstr "Laden event gegevens..."
+
+#: eventList.html:3
+msgid "Loading events..."
+msgstr "Laden evenementen..."
+
+#: overview.html:35
+msgid "Overview"
+msgstr "Overzicht"
+
+#: overview.html:49
+msgid "Payment costs"
+msgstr "Betaling kosten"
+
+#: overview.html:3
+msgid "Payment method"
+msgstr "Betalingsmethode"
+
+#: personal_info.html:1
+msgid "Personal info"
+msgstr "Persoonlijke info"
+
+#: personal_info.html:102
+msgid "Placing order..."
+msgstr "Order plaatsen..."
+
+#: personal_info.html:50
+msgid "Please provide a valid email address"
+msgstr "Geef een geldig e-mailadres"
+
+#: overview.html:10
+msgid "Please select a payment method"
+msgstr "Selecteer een betaalmethode"
+
+#: overview.html:25
+msgid "Please select a shipping method"
+msgstr "Selecteer een verzendmethode"
+
+#: personal_info.html:65
+msgid "Postal code"
+msgstr "Postcode"
+
+#: overview.html:39
+msgid "Products total"
+msgstr "Producten totaal"
+
+#: personal_info.html:103
+msgid "Redirecting you to payment page..."
+msgstr "U wordt omgeleid naar betaalpagina..."
+
+#: product.html:7
+msgid "Remove"
+msgstr "Verzetten"
+
+#: overview.html:44
+msgid "Service costs"
+msgstr "Servicekosten"
+
+#: overview.html:54
+msgid "Shipping costs"
+msgstr "Verzendkosten"
+
+#: overview.html:20
+msgid "Shipping method"
+msgstr "Verzendmethode"
+
+#: product.html:12
+msgid "Sold out"
+msgstr "Uitverkocht"
+
+#: index.html:39
+msgid "Start selling tickets"
+msgstr "Beginnen met de verkoop tickets"
+
+#: thank_you.html:3
+msgid "Thank you!"
+msgstr "Dankjewel!"
+
+#: index.html:37
+msgid "This website uses Paylogic for ticketing service. Do you also want to sell tickets for your event?"
+msgstr "Deze website maakt gebruik van Paylogic ticketing service. Wilt u ook om tickets te verkopen voor uw evenement?"
+
+#~ msgid "Select language"
+#~ msgstr "Kies een taal"

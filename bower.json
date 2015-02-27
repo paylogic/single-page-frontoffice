@@ -1,0 +1,33 @@
+{
+  "name": "paylogic-spa",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "angular-mocks": "1.3.14"
+  },
+  "dependencies": {
+    "angular": "1.3.14",
+    "angular-messages": "1.3.14",
+    "angular-animate": "1.3.14",
+    "angular-route": "1.3.14",
+    "angular-cache": "3.2.5",
+    "angular-paylogic-shopping-service": "spirosikmd/angular-paylogic-shopping-service#1.0.4",
+    "angular-gettext": "2.0.2",
+    "uikit": "2.17.0"
+  },
+  "overrides": {
+    "angular-base64": {
+      "main": [
+        "angular-base64.js"
+      ]
+    },
+    "uikit": {
+      "main": [
+        "./js/uikit.js",
+        "./js/components/datepicker.js",
+        "./js/components/form-select.js",
+        "./js/components/notify.js"
+      ]
+    }
+  }
+}

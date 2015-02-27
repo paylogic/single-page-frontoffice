@@ -1,0 +1,64 @@
+<div class="uk-form-row">
+  <h3 class="uk-panel-title">
+    <translate>Payment method</translate>
+    <img ng-if="bill.paymentMethod.image" ng-src="{{bill.paymentMethod.image}}" class="uk-align-right method-icon" />
+  </h3>
+  <div class="uk-form-select uk-width-1-1" data-uk-form-select>
+    <span ng-bind="bill.paymentMethod | option" ng-class="{'muted': !bill.paymentMethod}"></span>
+    <i class="uk-icon-caret-down uk-float-right"></i>
+    <select ng-model="bill.paymentMethod" ng-change="bill.refreshBillData()" ng-options="method | option for method in bill.content.available_payment_methods track by method.uid" name="paymentMethod" required>
+      <option value="" translate>Please select a payment method</option>
+    </select>
+  </div>
+  <div ng-messages="billForm.paymentMethod.$error" ng-if="billForm.$submitted">
+    <div ng-message="required" class="uk-form-help-block uk-text-danger uk-text-small">
+      <translate>Field is required</translate>
+    </div>
+  </div>
+</div>
+<div class="uk-form-row">
+  <h3 class="uk-panel-title" translate>Shipping method</h3>
+  <div class="uk-form-select uk-width-1-1" data-uk-form-select>
+    <span ng-bind="bill.shippingMethod | option" ng-class="{'muted': !bill.shippingMethod}"></span>
+    <i class="uk-icon-caret-down uk-float-right"></i>
+    <select ng-model="bill.shippingMethod" ng-change="bill.refreshBillData()" ng-options="method | option for method in bill.content.available_shipping_methods track by method.uid" name="shippingMethod" required>
+      <option value="" translate>Please select a shipping method</option>
+    </select>
+  </div>
+  <div ng-messages="billForm.shippingMethod.$error" ng-if="billForm.$submitted">
+    <div ng-message="required" class="uk-form-help-block uk-text-danger uk-text-small">
+      <translate>Field is required</translate>
+    </div>
+  </div>
+</div>
+<h3 class="uk-panel-title uk-margin-top">
+  <translate>Overview</translate>
+  <img ng-if="bill.overviewLoader" class="uk-float-right" src="images/loader.gif" width="18" height="18" />
+</h3>
+<div ng-class="{'transparent animate': bill.overviewLoader}" class="uk-grid uk-grid-small" data-uk-grid-margin>
+  <div class="uk-width-2-3" translate>Products total</div>
+  <div class="uk-text-right uk-width-1-3">
+    <span ng-if="bill.content.product_total.amount" ng-bind="bill.content.product_total | price"></span>
+    <span ng-if="!bill.content.product_total.amount">-</span>
+  </div>
+  <div class="uk-width-2-3" translate>Service costs</div>
+  <div class="uk-text-right uk-width-1-3">
+    <span ng-if="bill.content.service_costs.amount" ng-bind="bill.content.service_costs | price"></span>
+    <span ng-if="!bill.content.service_costs.amount">-</span>
+  </div>
+  <div class="uk-width-2-3" translate>Payment costs</div>
+  <div class="uk-text-right uk-width-1-3">
+    <span ng-if="bill.content.payment_method" ng-bind="bill.content.payment_method.costs | price"></span>
+    <span ng-if="!bill.content.payment_method">-</span>
+  </div>
+  <div class="uk-width-2-3" translate>Shipping costs</div>
+  <div class="uk-text-right uk-width-1-3">
+    <span ng-if="bill.content.shipping_method" ng-bind="bill.content.shipping_method.costs | price"></span>
+    <span ng-if="!bill.content.shipping_method">-</span>
+  </div>
+  <div class="uk-width-2-3 uk-text-bold" translate>Grand total</div>
+  <div class="uk-text-right uk-width-1-3">
+    <span ng-if="bill.content.grand_total.amount" ng-bind="bill.content.grand_total | price" class="uk-text-bold"></span>
+    <span ng-if="!bill.content.grand_total.amount">-</span>
+  </div>
+</div>

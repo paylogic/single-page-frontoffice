@@ -1,0 +1,120 @@
+// Name: Application
+// Description: Extra style definitions
+//
+// ========================================================================
+
+/*
+ * Animations
+ */
+
+.animation-fade {
+    opacity: 1;
+}
+
+.animation-fade.ng-hide {
+    opacity: 0;
+}
+
+.ng-hide-add,
+.ng-hide-remove,
+.animate {
+    -webkit-transition: all linear 0.12s;
+    transition: all linear 0.12s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+/*
+ * Badge
+ */
+
+.badge-disabled {
+    background-color: lighten(@global-accent, 50%);
+    color: mix(@global-color, lighten(@global-accent, 50%), 40%);
+}
+
+/*
+ * Fixed anchor
+ */
+
+.fixed-anchor {
+    position: fixed;
+    top: @panel-box-padding;
+    left: @panel-box-padding;
+    z-index: @sticky-z-index;
+}
+
+/*
+ * Loader
+ */
+
+.loader {
+    padding: 2*@utility-margin-large 0;
+}
+
+/*
+ * Payment methods
+ */
+
+.method-icon {
+    max-height: @panel-title-line-height;
+}
+
+/*
+ * Product
+ */
+
+.product-total {
+    font-weight: 600;
+    font-size: @text-small-font-size - 1;
+    margin: @badge-padding-horizontal @badge-padding-horizontal/2 0 0;
+    line-height: @badge-notification-line-height - 4;
+}
+
+.product-quantity {
+    border-radius: 500px;
+    margin: @badge-padding-horizontal 0;
+    background: @badge-color;
+    color: @badge-background;
+    padding: 0 @badge-padding-horizontal;
+    line-height: @badge-notification-line-height - 4;
+    .box-shadow(0 1px 2px, 25%);
+}
+
+.price-quantity {
+    * {
+        line-height: @button-line-height;
+    }
+}
+
+/*
+ * Shadow
+ */
+
+.with-shadow {
+    .box-shadow(0 1px 2px, 10%);
+}
+
+.with-shadow-large {
+    .box-shadow(0 3px 6px, 20%);
+}
+
+.text-shadow {
+    .text-shadow(0 1px 2px, 25%);
+}
+
+/*
+ * Text
+ */
+
+.text-normal {
+    font-weight: 400;
+}
+
+/*
+ * Transparent
+ */
+
+.transparent {
+    opacity: 0.3;
+}

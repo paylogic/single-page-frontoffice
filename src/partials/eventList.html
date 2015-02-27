@@ -1,0 +1,42 @@
+<div ng-if="main.loading || main.errorMessage" class="uk-text-center uk-text-bold loader">
+  <img ng-if="main.loading" src="images/loader.gif" width="28" height="28" />
+  <div ng-if="main.loading" class="uk-margin-small-top" translate>Loading events...</div>
+  <div ng-if="main.errorMessage" ng-bind="main.errorMessage" class="uk-text-danger"></div>
+</div>
+<ul ng-show="main.events" class="uk-grid uk-grid-width-medium-1-2 animation-fade" data-uk-grid-match="{target:'.uk-panel'}" data-uk-grid-margin>
+  <li ng-repeat="event in main.events">
+    <div class="uk-panel uk-panel-box uk-text-center with-shadow">
+      <div class="uk-panel-teaser uk-position-relative">
+        <div ng-if="event.image" ng-style="{'background-image': 'url({{event.image}})', height: '180px'}" class="uk-cover-background"></div>
+        <div ng-if="!event.image" class="uk-cover-background"></div>
+        <div class="uk-overlay-area">
+          <div class="uk-overlay-area-content">
+            <h1 ng-if="event.title | localize" ng-bind="event.title | localize"></h1>
+            <h3 ng-if="event.subtitle | localize" ng-bind="event.subtitle | localize"></h3>
+          </div>
+        </div>
+      </div>
+      <div class="uk-text-large uk-text-bold">
+        <span ng-if="event.event_start" ng-bind="event.event_start | date:'d.MM.yyyy'"></span>
+        <span ng-if="event.location.name | localize">
+          @ <span ng-bind="event.location.name | localize"></span>, <span ng-bind="event.location.city | localize"></span>
+        </span>
+      </div>
+      <hr />
+      <div ng-if="event.artists" class="uk-text-bold uk-margin-bottom">
+        <span ng-repeat="artist in event.artists">
+          <span ng-bind="artist | localize"></span><span ng-if="!$last">,</span>
+        </span>
+      </div>
+      <div ng-if="event.genres" class="uk-margin-bottom">
+        <span ng-repeat="genre in event.genres">
+          <span ng-bind="genre.title | localize"></span><span ng-if="!$last">,</span>
+        </span>
+      </div>
+      <div ng-if="event.description | localize" ng-bind="event.description | localize" class="uk-margin-bottom"></div>
+      <div ng-if="event.sold_out" ng-bind="event.sold_out_text | localize" class="uk-text-bold uk-text-success"></div>
+      <a ng-if="!event.sold_out" ng-click="main.navigate(event.uid)" class="uk-button uk-button-large uk-button-success" translate>Buy tickets</a>
+    </div>
+  </li>
+  <li class="uk-hidden"></li>
+</ul>

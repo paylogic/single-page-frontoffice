@@ -1,0 +1,108 @@
+<h3 class="uk-panel-title" translate>Personal info</h3>
+<div class="uk-grid uk-grid-small" data-uk-grid-margin data-uk-grid-match>
+  <div class="uk-width-1-2">
+    <input ng-model="bill.consumer.first_name" name="first_name" type="text" class="uk-width-1-1" placeholder="{{'First name' | translate}}" required />
+    <div ng-messages="billForm.first_name.$error" ng-if="billForm.$submitted">
+      <div ng-message="required" class="uk-form-help-block uk-text-danger uk-text-small">
+        <translate>Field is required</translate>
+      </div>
+    </div>
+  </div>
+  <div class="uk-width-1-2">
+    <input ng-model="bill.consumer.last_name" name="last_name" type="text" class="uk-width-1-1" placeholder="{{'Last name' | translate}}" required />
+    <div ng-messages="billForm.last_name.$error" ng-if="billForm.$submitted">
+      <div ng-message="required" class="uk-form-help-block uk-text-danger uk-text-small">
+        <translate>Field is required</translate>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="uk-grid uk-grid-small" data-uk-grid-margin data-uk-grid-match>
+  <div class="uk-width-1-2 uk-width-medium-1-4">
+    <input ng-model="bill.consumer.date_of_birth" name="date_of_birth" type="text" class="uk-width-1-1" placeholder="{{'Date of birth' | translate}}" datepicker required />
+    <div ng-messages="billForm.date_of_birth.$error" ng-if="billForm.$submitted">
+      <div ng-message="required" class="uk-form-help-block uk-text-danger uk-text-small">
+        <translate>Field is required</translate>
+      </div>
+    </div>
+  </div>
+  <div class="uk-width-1-2 uk-width-medium-1-4">
+    <div class="uk-form-select uk-width-1-1" data-uk-form-select>
+      <span ng-bind="bill.gender[bill.consumer.gender] | localize" ng-class="{'muted': !bill.consumer.gender}"></span>
+      <i class="uk-icon-caret-down uk-float-right"></i>
+      <select ng-model="bill.consumer.gender" ng-options="key as value | localize for (key, value) in bill.gender" name="gender" required>
+        <option value="" translate>Gender</option>
+      </select>
+    </div>
+    <div ng-messages="billForm.gender.$error" ng-if="billForm.$submitted">
+      <div ng-message="required" class="uk-form-help-block uk-text-danger uk-text-small">
+        <translate>Field is required</translate>
+      </div>
+    </div>
+  </div>
+  <div class="uk-width-medium-1-2">
+    <input ng-model="bill.consumer.email" name="email" type="email" class="uk-width-1-1" placeholder="{{'Email address' | translate}}" required />
+    <div ng-messages="billForm.email.$error" ng-if="billForm.$submitted">
+      <div ng-message="required" class="uk-form-help-block uk-text-danger uk-text-small">
+        <translate>Field is required</translate>
+      </div>
+      <div ng-message="email" class="uk-form-help-block uk-text-danger uk-text-small">
+        <translate>Please provide a valid email address</translate>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="uk-grid uk-grid-small" data-uk-grid-margin data-uk-grid-match>
+  <div class="uk-width-2-3">
+    <input ng-model="bill.consumer.address" name="address" type="text" class="uk-width-1-1" placeholder="{{'Address' | translate}}" required />
+    <div ng-messages="billForm.address.$error" ng-if="billForm.$submitted">
+      <div ng-message="required" class="uk-form-help-block uk-text-danger uk-text-small">
+        <translate>Field is required</translate>
+      </div>
+    </div>
+  </div>
+  <div class="uk-width-1-3">
+    <input ng-model="bill.consumer.postal_code" name="postal_code" type="text" class="uk-width-1-1" placeholder="{{'Postal code' | translate}}" required />
+    <div ng-messages="billForm.postal_code.$error" ng-if="billForm.$submitted">
+      <div ng-message="required" class="uk-form-help-block uk-text-danger uk-text-small">
+        <translate>Field is required</translate>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="uk-grid uk-grid-small" data-uk-grid-margin data-uk-grid-match>
+  <div class="uk-width-1-2">
+    <input ng-model="bill.consumer.city" name="city" type="text" class="uk-width-1-1" placeholder="{{'City' | translate}}" required />
+    <div ng-messages="billForm.city.$error" ng-if="billForm.$submitted">
+      <div ng-message="required" class="uk-form-help-block uk-text-danger uk-text-small">
+        <translate>Field is required</translate>
+      </div>
+    </div>
+  </div>
+  <div class="uk-width-1-2">
+    <div class="uk-form-select uk-width-1-1" data-uk-form-select>
+      <span ng-bind="bill.countries[bill.consumer.country] | localize" ng-class="{'muted': !bill.consumer.country}"></span>
+      <i class="uk-icon-caret-down uk-float-right"></i>
+      <select ng-model="bill.consumer.country" ng-options="key as value | localize for (key, value) in bill.countries" name="country" required>
+        <option value="" translate>Country</option>
+      </select>
+    </div>
+    <div ng-messages="billForm.country.$error" ng-if="billForm.$submitted">
+      <div ng-message="required" class="uk-form-help-block uk-text-danger uk-text-small">
+        <translate>Field is required</translate>
+      </div>
+    </div>
+  </div>
+  <div class="uk-width-1-1 uk-text-right">
+    <span ng-if="bill.placingOrder" class="uk-display-inline-block uk-margin-small-right">
+      <img src="images/loader.gif" width="18" height="18" />
+    </span>
+    <button class="uk-button uk-button-success uk-button-large" type="submit">
+      <span ng-switch="confirmBtnText">
+        <span ng-switch-when="PLACING_ORDER" translate>Placing order...</span>
+        <span ng-switch-when="REDIRECTING" translate>Redirecting you to payment page...</span>
+        <span ng-switch-default translate>Confirm and procceed</span>
+      </span>
+    </button>
+  </div>
+</div>

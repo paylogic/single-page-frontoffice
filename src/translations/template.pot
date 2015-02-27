@@ -1,0 +1,159 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+
+#: index.html:42
+msgid "2015 Paylogic. All rights reserved."
+msgstr ""
+
+#: product.html:8
+msgid "Add"
+msgstr ""
+
+#: personal_info.html:57
+msgid "Address"
+msgstr ""
+
+#: event.html:61
+msgid "Back to events list"
+msgstr ""
+
+#: eventList.html:38
+msgid "Buy tickets"
+msgstr ""
+
+#: personal_info.html:75
+msgid "City"
+msgstr ""
+
+#: personal_info.html:104
+msgid "Confirm and procceed"
+msgstr ""
+
+#: personal_info.html:87
+msgid "Country"
+msgstr ""
+
+#: personal_info.html:22
+msgid "Date of birth"
+msgstr ""
+
+#: personal_info.html:44
+msgid "Email address"
+msgstr ""
+
+#: overview.html:15
+#: overview.html:30
+#: personal_info.html:15
+#: personal_info.html:25
+#: personal_info.html:39
+#: personal_info.html:47
+#: personal_info.html:60
+#: personal_info.html:68
+#: personal_info.html:7
+#: personal_info.html:78
+#: personal_info.html:92
+msgid "Field is required"
+msgstr ""
+
+#: personal_info.html:4
+msgid "First name"
+msgstr ""
+
+#: personal_info.html:34
+msgid "Gender"
+msgstr ""
+
+#: overview.html:59
+msgid "Grand total"
+msgstr ""
+
+#: personal_info.html:12
+msgid "Last name"
+msgstr ""
+
+#: event.html:4
+msgid "Loading event data..."
+msgstr ""
+
+#: eventList.html:3
+msgid "Loading events..."
+msgstr ""
+
+#: overview.html:35
+msgid "Overview"
+msgstr ""
+
+#: overview.html:49
+msgid "Payment costs"
+msgstr ""
+
+#: overview.html:3
+msgid "Payment method"
+msgstr ""
+
+#: personal_info.html:1
+msgid "Personal info"
+msgstr ""
+
+#: personal_info.html:102
+msgid "Placing order..."
+msgstr ""
+
+#: personal_info.html:50
+msgid "Please provide a valid email address"
+msgstr ""
+
+#: overview.html:10
+msgid "Please select a payment method"
+msgstr ""
+
+#: overview.html:25
+msgid "Please select a shipping method"
+msgstr ""
+
+#: personal_info.html:65
+msgid "Postal code"
+msgstr ""
+
+#: overview.html:39
+msgid "Products total"
+msgstr ""
+
+#: personal_info.html:103
+msgid "Redirecting you to payment page..."
+msgstr ""
+
+#: product.html:7
+msgid "Remove"
+msgstr ""
+
+#: overview.html:44
+msgid "Service costs"
+msgstr ""
+
+#: overview.html:54
+msgid "Shipping costs"
+msgstr ""
+
+#: overview.html:20
+msgid "Shipping method"
+msgstr ""
+
+#: product.html:12
+msgid "Sold out"
+msgstr ""
+
+#: index.html:39
+msgid "Start selling tickets"
+msgstr ""
+
+#: thank_you.html:3
+msgid "Thank you!"
+msgstr ""
+
+#: index.html:37
+msgid "This website uses Paylogic for ticketing service. Do you also want to sell tickets for your event?"
+msgstr ""
