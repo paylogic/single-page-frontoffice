@@ -30,10 +30,9 @@ app.config ($compileProvider, $routeProvider, DSCacheFactoryProvider, paylogicSh
     storageMode: "localStorage"
 
   paylogicShoppingServiceConfigProvider.set
-    apiKey: "2276825a010f417eb91fe18229c0ffee"
-    apiSecret: "031e83a8d7aa49efbb4e017730a43301"
-    baseURL: "https://shopping-service.sandbox.paylogic.com/"
-    # baseURL: "https://shopping-api.staging.paylogic.nl/"
+    apiKey: ""
+    apiSecret: ""
+    baseURL: ""
 
 app.constant "currencies",
   "EUR": "€"
