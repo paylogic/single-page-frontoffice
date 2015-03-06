@@ -1,8 +1,14 @@
+###
+Main application file
+
+This file is responsibe for all the configuration settings, like setting dependencies,
+default values, languages, currencies, configure the providers etc.
+###
+
 "use strict"
 
 app = angular.module "app", [
   "ngMessages"
-  "ngAnimate"
   "ngRoute"
   "angular-data.DSCacheFactory"
   "angular-paylogic-shopping-service"
@@ -13,50 +19,63 @@ app.config ($compileProvider, $routeProvider, DSCacheFactoryProvider, paylogicSh
   # Disable debug information for performance boosting.
   $compileProvider.debugInfoEnabled no
 
+  # Set the routes for the application.
   $routeProvider
     .when "/event/:eventUid",
       templateUrl: "../partials/event.html"
-      controller: "EventController as event"
+      controller: "EventController"
+      controllerAs: "event"
     .when "/thank-you",
       templateUrl: "../partials/thank_you.html"
     .otherwise
       redirectTo: "/"
-      templateUrl: "../partials/eventList.html"
+      templateUrl: "../partials/event_list.html"
 
+  # Set some cache defaults.
   DSCacheFactoryProvider.setCacheDefaults
     maxAge: 900000
     cacheFlushInterval: 3600000
     deleteOnExpire: "aggressive"
     storageMode: "localStorage"
 
+  # Configuration settings to communicate with the API.
+  # Only Paylogic can provide you with an API key, secret and base url.
   paylogicShoppingServiceConfigProvider.set
     apiKey: ""
     apiSecret: ""
     baseURL: ""
 
+# Supported currencies. Add here any more currencies that you wish to support.
 app.constant "currencies",
   "EUR": "€"
 
-app.constant "gender",
-  "1":
-    "en": "Male"
-  "2":
-    "en": "Female"
-
+# Available countries for selection.
 app.constant "countries",
   "NL":
     "en": "The Netherlands"
 
+# Supported languages. Add here any more languages that you wish to support.
 app.constant "languages",
   "en": "English"
   "nl": "Dutch"
 
+# Gender mapper.
+app.constant "gender",
+  "1":
+    "en": "Male"
+    "nl": "Mannelijk"
+  "2":
+    "en": "Female"
+    "nl": "Vrouwelijk"
+
+# Set some defaults.
 app.constant "defaults",
   "docTitle":
     "en": "Paylogic SPA"
   "country": "NL"
   "language": "en"
 
+# Mapper to better communicate the response messages from the API to the user.
 app.constant "messages",
   "UNKNOWN_ERROR":
     "en": "An error occured. Please try again."
@@ -75,7 +94,7 @@ app.constant "messages",
   "INSUFFICIENT_PRODUCTS":
     "en": "Insufficient number of products."
   "MAX_PER_ORDER_EXCEEDED":
-    "en": "You have reached the maximum amount per order for this product."
+    "en": "You have reached the maximum amount of products per order."
   "PAYMENT_METHOD_NOT_APPLICABLE":
     "en": "The selected payment method cannot be used for this set of products and country."
   "SHIPPING_METHOD_NOT_APPLICABLE":

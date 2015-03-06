@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: Orestis Ioakeimidis <o.ioakeimidis@gmail.com>\n"
+"Last-Translator: Paylogic\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr "Adres"
 
 #: event.html:61
 msgid "Back to events list"
-msgstr "Terug naar de lijst gebeurtenissen"
+msgstr "Terug naar de evenementen lijst"
 
 #: eventList.html:38
 msgid "Buy tickets"
@@ -33,11 +33,11 @@ msgstr "Kaartjes kopen"
 
 #: personal_info.html:75
 msgid "City"
-msgstr "City"
+msgstr "Stad"
 
 #: personal_info.html:104
 msgid "Confirm and procceed"
-msgstr "Bevestigen en procceed"
+msgstr "Bevestigen en doorgaan"
 
 #: personal_info.html:87
 msgid "Country"
@@ -49,7 +49,7 @@ msgstr "Geboortedatum"
 
 #: personal_info.html:44
 msgid "Email address"
-msgstr "Email adres"
+msgstr "E-mailadres"
 
 #: overview.html:15
 #: overview.html:30
@@ -75,7 +75,7 @@ msgstr "Geslacht"
 
 #: overview.html:59
 msgid "Grand total"
-msgstr "Algemeen totaal"
+msgstr "Totaal"
 
 #: personal_info.html:12
 msgid "Last name"
@@ -95,7 +95,7 @@ msgstr "Overzicht"
 
 #: overview.html:49
 msgid "Payment costs"
-msgstr "Betaling kosten"
+msgstr "Betalingskosten"
 
 #: overview.html:3
 msgid "Payment method"
@@ -135,7 +135,7 @@ msgstr "U wordt omgeleid naar betaalpagina..."
 
 #: product.html:7
 msgid "Remove"
-msgstr "Verzetten"
+msgstr "Verwijderen"
 
 #: overview.html:44
 msgid "Service costs"

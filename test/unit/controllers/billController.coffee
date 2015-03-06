@@ -117,16 +117,16 @@ describe "Controller: BillController", ->
 
   describe "Function: initQuantities", ->
 
-    it "should initialize the product quantities", inject (BillData) ->
+    it "should initialize the product quantities", inject (BillService) ->
       controller = createController()
 
-      spyOn BillData, "get"
+      spyOn BillService, "get"
 
       controller.products = mockData._embedded["shop:product"]
 
       controller.initQuantities()
 
-      expect BillData.get.calls.count()
+      expect BillService.get.calls.count()
         .toEqual 1
 
       expect controller.quantities
@@ -135,8 +135,8 @@ describe "Controller: BillController", ->
 
   describe "Function: updateDataFromCache", ->
 
-    it "should update the data from cache", inject (BillData) ->
-      BillData.put "data", mockBill
+    it "should update the data from cache", inject (BillService) ->
+      BillService.put "data", mockBill
 
       controller = createController()
 
@@ -155,8 +155,8 @@ describe "Controller: BillController", ->
 
   describe "Function: saveDataInCache", ->
 
-    it "should save data in the cache", inject (BillData) ->
-      spyOn BillData, "put"
+    it "should save data in the cache", inject (BillService) ->
+      spyOn BillService, "put"
 
       controller = createController()
 
@@ -165,10 +165,10 @@ describe "Controller: BillController", ->
 
       controller.saveDataInCache()
 
-      expect BillData.put
+      expect BillService.put
         .toHaveBeenCalledWith "data", "Content"
 
-      expect BillData.put
+      expect BillService.put
         .toHaveBeenCalledWith "consumer", "Consumer"
 
   describe "Function: refreshBillData", ->
@@ -245,8 +245,8 @@ describe "Controller: BillController", ->
 
   describe "Function: performBillRequest", ->
 
-    it "should perform the bill request correctly", inject ($q, BillData) ->
-      spyOn BillData, "refresh"
+    it "should perform the bill request correctly", inject ($q, BillService) ->
+      spyOn BillService, "refresh"
         .and.callFake ->
           deferred = $q.defer()
           deferred.resolve mockBill
@@ -282,8 +282,8 @@ describe "Controller: BillController", ->
       expect scope.$broadcast
         .toHaveBeenCalledWith "billRefreshed"
 
-    it "should handle the bill request failure correctly", inject ($q, BillData) ->
-      spyOn BillData, "refresh"
+    it "should handle the bill request failure correctly", inject ($q, BillService) ->
+      spyOn BillService, "refresh"
         .and.callFake ->
           deferred = $q.defer()
           deferred.reject mockError
@@ -341,14 +341,14 @@ describe "Controller: BillController", ->
 
   describe "Function: performOrderRequest", ->
 
-    it "should perform the order request correctly", inject ($q, BillData) ->
-      spyOn BillData, "order"
+    it "should perform the order request correctly", inject ($q, BillService) ->
+      spyOn BillService, "order"
         .and.callFake ->
           deferred = $q.defer()
           deferred.resolve mockOrder
           return deferred.promise
 
-      spyOn BillData, "clear"
+      spyOn BillService, "clear"
 
       controller = createController()
 
@@ -362,14 +362,14 @@ describe "Controller: BillController", ->
 
       scope.$digest()
 
-      expect BillData.clear
+      expect BillService.clear
         .toHaveBeenCalled()
 
       expect scope.confirmBtnText
         .toEqual "REDIRECTING"
 
-    it "should handle the order request failure correctly", inject ($q, BillData) ->
-      spyOn BillData, "order"
+    it "should handle the order request failure correctly", inject ($q, BillService) ->
+      spyOn BillService, "order"
         .and.callFake ->
           deferred = $q.defer()
           deferred.reject mockError

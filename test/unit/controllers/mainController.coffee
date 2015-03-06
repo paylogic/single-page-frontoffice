@@ -38,8 +38,8 @@ describe "Controller: MainController", ->
     expect $document[0].title
       .toEqual "Paylogic SPA"
 
-  it "should initialize the events data", inject ($q, EventListData) ->
-    spyOn EventListData, "events"
+  it "should initialize the events data", inject ($q, EventService) ->
+    spyOn EventService, "events"
       .and.callFake ->
         deferred = $q.defer()
         deferred.resolve mockEvents
@@ -63,8 +63,8 @@ describe "Controller: MainController", ->
     expect controller.loading
       .toBeFalsy()
 
-  it "should handle the EventListData events function failure correctly", inject ($q, EventListData) ->
-    spyOn EventListData, "events"
+  it "should handle the EventListData events function failure correctly", inject ($q, EventService) ->
+    spyOn EventService, "events"
       .and.callFake ->
         deferred = $q.defer()
         deferred.reject mockError
@@ -85,14 +85,14 @@ describe "Controller: MainController", ->
 
   describe "Function: navigate", ->
 
-    it "should cache the selected event and navigate to event details page", inject ($location, EventListData) ->
+    it "should cache the selected event and navigate to event details page", inject ($location, EventService) ->
       spyOn $location, "path"
 
       controller = createController()
 
       controller.navigate "testEventUid"
 
-      expect EventListData.get "eventUid"
+      expect EventService.get "eventUid"
         .toEqual "testEventUid"
 
       expect $location.path

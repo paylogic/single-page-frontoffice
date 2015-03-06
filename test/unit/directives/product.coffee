@@ -9,7 +9,7 @@ describe "Directive: product", ->
 
     module "partials/product.html"
 
-    inject ($controller, $rootScope, $compile, _BillData_) ->
+    inject ($controller, $rootScope, $compile, _BillService_) ->
       elm = angular.element """
         <product content="content" quantities="quantities" placing-order="placingOrder" refresh-bill="refreshBill"></product>
       """
@@ -43,7 +43,7 @@ describe "Directive: product", ->
       createController = ->
         $controller "ProductController",
           $scope: scope
-          BillData: _BillData_
+          BillService: _BillService_
 
       $compile(elm)(scope)
       scope.$digest()
@@ -148,7 +148,7 @@ describe "Directive: product", ->
 
     describe "Function: refreshBillData", ->
 
-      it "should update the quantities in the cache and refresh the bill", inject (BillData) ->
+      it "should update the quantities in the cache and refresh the bill", inject (BillService) ->
         controller = createController()
 
         spyOn scope, "refreshBill"
@@ -157,9 +157,21 @@ describe "Directive: product", ->
 
         controller.refreshBillData()
 
-        expect BillData.get "quantities"
+        expect BillService.get "quantities"
           .toEqual
             "productUri": 2
 
         expect scope.refreshBill
           .toHaveBeenCalled()
+
+    describe "Function: countQuantities", ->
+
+      it "should count the total products selected", ->
+        controller = createController()
+
+        scope.quantities.productUri = 2
+
+        count = controller.countQuantities()
+
+        expect count
+          .toEqual 2

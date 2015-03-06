@@ -1,25 +1,25 @@
 "use strict"
 
-describe "Service: EventListData", ->
-  EventListData = null
-  Cache = null
+describe "Service: EventService", ->
+  EventService = null
+  CacheService = null
 
   beforeEach ->
     module "app"
 
-    inject (_EventListData_, _Cache_) ->
-      EventListData = _EventListData_
-      Cache = _Cache_
+    inject (_EventService_, _CacheService_) ->
+      EventService = _EventService_
+      CacheService = _CacheService_
 
   afterEach ->
-    Cache.destroy()
+    CacheService.destroy()
 
   describe "Function: events", ->
 
     result = null
 
     beforeEach (done) ->
-      result = EventListData.events()
+      result = EventService.events()
       done()
 
     it "should return a promise", ->
@@ -32,8 +32,8 @@ describe "Service: EventListData", ->
     resultWithID = null
 
     beforeEach (done) ->
-      result = EventListData.singleEvent()
-      resultWithID = EventListData.singleEvent "eventUid"
+      result = EventService.singleEvent()
+      resultWithID = EventService.singleEvent "eventUid"
       done()
 
     it "should return a promise, provided or not an event uid", ->
@@ -46,47 +46,37 @@ describe "Service: EventListData", ->
   describe "Function: get", ->
 
     it "should return a value from the cache", ->
-      Cache.put "test", "testValue"
+      CacheService.put "test", "testValue"
 
-      expect EventListData.get "test"
+      expect EventService.get "test"
         .toEqual "testValue"
 
   describe "Function: put", ->
 
     it "should insert the value into the cache under the given key, if a value is provided", ->
-      EventListData.put "test", "testValue"
+      EventService.put "test", "testValue"
 
-      expect Cache.get "test"
+      expect CacheService.get "test"
         .toEqual "testValue"
 
     it "should remove the item with the given key, if value is not provided", ->
-      Cache.put "test", "testValue"
+      CacheService.put "test", "testValue"
 
-      EventListData.put "test", ""
+      EventService.put "test", ""
 
-      expect Cache.get "test"
-        .toBeUndefined()
-
-  describe "Function: remove", ->
-
-    it "should remove the item with the given key", ->
-      Cache.put "test", "testValue"
-
-      EventListData.remove "test"
-
-      expect Cache.get "test"
+      expect CacheService.get "test"
         .toBeUndefined()
 
   describe "Function: clear", ->
 
     it "should remove the items with the keys that are defined in event list data types", ->
-      Cache.put "eventUid", "test"
-      Cache.put "notInDataTypes", "test"
+      CacheService.put "eventUid", "test"
+      CacheService.put "notInDataTypes", "test"
 
-      EventListData.clear()
+      EventService.clear()
 
-      expect Cache.get "eventUid"
+      expect CacheService.get "eventUid"
         .toBeUndefined()
 
-      expect Cache.get "notInDataTypes"
+      expect CacheService.get "notInDataTypes"
         .toEqual "test"

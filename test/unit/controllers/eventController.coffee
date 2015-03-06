@@ -34,8 +34,8 @@ describe "Controller: EventController", ->
         controller = $controller "EventController",
           $scope: scope
 
-  it "should initialize the event content", inject ($q, $document, EventListData) ->
-    spyOn EventListData, "singleEvent"
+  it "should initialize the event content", inject ($q, $document, EventService) ->
+    spyOn EventService, "singleEvent"
       .and.callFake ->
         deferred = $q.defer()
         deferred.resolve mockContent
@@ -66,8 +66,8 @@ describe "Controller: EventController", ->
     expect controller.loading
       .toBeFalsy()
 
-  it "should handle the EventListData singleEvent function failure correctly", inject ($q, EventListData) ->
-    spyOn EventListData, "singleEvent"
+  it "should handle the EventService singleEvent function failure correctly", inject ($q, EventService) ->
+    spyOn EventService, "singleEvent"
       .and.callFake ->
         deferred = $q.defer()
         deferred.reject mockError
@@ -88,19 +88,19 @@ describe "Controller: EventController", ->
 
   describe "Function: clear", ->
 
-    it "should clear the data and return to index", inject ($location, $document, EventListData, BillData, defaults) ->
-      spyOn EventListData, "clear"
-      spyOn BillData, "clear"
+    it "should clear the data and return to index", inject ($location, $document, EventService, BillService, defaults) ->
+      spyOn EventService, "clear"
+      spyOn BillService, "clear"
       spyOn $location, "path"
 
       controller = createController()
 
       controller.clear()
 
-      expect EventListData.clear
+      expect EventService.clear
         .toHaveBeenCalled()
 
-      expect BillData.clear
+      expect BillService.clear
         .toHaveBeenCalled()
 
       expect $document[0].title

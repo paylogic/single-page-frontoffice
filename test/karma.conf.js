@@ -7,7 +7,6 @@ module.exports = function (config) {
     files: [
       'app/vendor/angular/angular.js',
       'app/vendor/angular-messages/angular-messages.js',
-      'app/vendor/angular-animate/angular-animate.js',
       'app/vendor/angular-route/angular-route.js',
       'app/vendor/angular-cache/dist/angular-cache.js',
       'app/vendor/angular-resource/angular-resource.js',
@@ -55,7 +54,7 @@ module.exports = function (config) {
         bare: true,
         sourceMap: false
       },
-      transformPath: function(path) {
+      transformPath: function (path) {
         return path.replace(/\.coffee$/, '.js');
       }
     },

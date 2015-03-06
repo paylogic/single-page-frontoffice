@@ -2,7 +2,7 @@
 
 describe "Service: LanguageService", ->
   LanguageService = null
-  Cache = null
+  CacheService = null
   gettextCatalog = null
   defaults = null
   languages = null
@@ -10,15 +10,15 @@ describe "Service: LanguageService", ->
   beforeEach ->
     module "app"
 
-    inject (_LanguageService_, _Cache_, _gettextCatalog_, _defaults_, _languages_) ->
+    inject (_LanguageService_, _CacheService_, _gettextCatalog_, _defaults_, _languages_) ->
       LanguageService = _LanguageService_
-      Cache = _Cache_
+      CacheService = _CacheService_
       gettextCatalog = _gettextCatalog_
       defaults = _defaults_
       languages = _languages_
 
   afterEach ->
-    Cache.destroy()
+    CacheService.destroy()
 
   describe "Function: languages", ->
 
@@ -54,21 +54,21 @@ describe "Service: LanguageService", ->
   describe "Function: setLanguage", ->
 
     it "should set the selected language", ->
-      spyOn Cache, "put"
+      spyOn CacheService, "put"
       spyOn gettextCatalog, "setCurrentLanguage"
 
       LanguageService.setLanguage "nl"
 
-      expect Cache.put
+      expect CacheService.put
         .toHaveBeenCalledWith "language", "nl"
 
       expect gettextCatalog.setCurrentLanguage
         .toHaveBeenCalledWith "nl"
 
-    it "should set the language from the Cache if no language is provided", ->
+    it "should set the language from the CacheService if no language is provided", ->
       spyOn gettextCatalog, "setCurrentLanguage"
 
-      Cache.put "language", "gr"
+      CacheService.put "language", "gr"
 
       LanguageService.setLanguage()
 

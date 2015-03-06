@@ -3,7 +3,7 @@
   <div ng-if="main.loading" class="uk-margin-small-top" translate>Loading events...</div>
   <div ng-if="main.errorMessage" ng-bind="main.errorMessage" class="uk-text-danger"></div>
 </div>
-<ul ng-show="main.events" class="uk-grid uk-grid-width-medium-1-2 animation-fade" data-uk-grid-match="{target:'.uk-panel'}" data-uk-grid-margin>
+<ul ng-show="main.events" class="uk-grid uk-grid-width-medium-1-2" data-uk-grid-match="{target:'.uk-panel'}" data-uk-grid-margin>
   <li ng-repeat="event in main.events">
     <div class="uk-panel uk-panel-box uk-text-center with-shadow">
       <div class="uk-panel-teaser uk-position-relative">

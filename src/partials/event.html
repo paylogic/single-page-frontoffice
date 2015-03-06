@@ -5,7 +5,7 @@
     <div ng-if="event.errorMessage" ng-bind="event.errorMessage" class="uk-text-danger"></div>
   </div>
 </div>
-<div ng-show="event.content" class="uk-panel uk-panel-box animation-fade with-shadow">
+<div ng-show="event.content" class="uk-panel uk-panel-box with-shadow">
   <div class="uk-panel-teaser uk-position-relative">
     <div ng-if="event.content.image" ng-style="{'background-image': 'url({{event.content.image}})'}" class="uk-cover-background"></div>
     <div ng-if="!event.content.image" class="uk-cover-background"></div>
@@ -36,11 +36,11 @@
   <div ng-if="!event.content.sold_out" ng-controller="BillController as bill">
     <div class="uk-grid uk-grid-divider" data-uk-grid-match data-uk-grid-margin>
       <div ng-repeat="product in bill.products" class="uk-width-medium-1-2 uk-width-large-1-3">
-        <product content="product" quantities="bill.quantities" placing-order="bill.placingOrder" refresh-bill="bill.refreshBillData()"></product>
+        <div product content="product" quantities="bill.quantities" placing-order="bill.placingOrder" refresh-bill="bill.refreshBillData()"></div>
       </div>
       <div class="uk-hidden"></div>
     </div>
-    <div ng-show="bill.content" id="bill-container" class="animation-fade">
+    <div ng-show="bill.content" id="bill-container">
       <div class="uk-visible-small fixed-anchor">
         <a ng-href="event/{{event.content.uid}}#bill-container" class="uk-icon-button uk-icon-shopping-cart uk-icon-small with-shadow-large" data-uk-smooth-scroll></a>
       </div>

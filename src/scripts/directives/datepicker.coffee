@@ -1,3 +1,13 @@
+###
+Datepicker Directive
+
+Encapsulates the initialization of the UIkit datepicker component on the
+selected element. It helps update the model value, each time the value
+of the element change.
+
+@example <input ng-model="" type="text" datepicker />
+###
+
 "use strict"
 
 app = angular.module "app"
