@@ -16,12 +16,12 @@ And click confirm! You have just completed the easiest purchasing process of you
 ## Running it locally
 
     # Clone the git repository.
-    git clone git@github.com:paylogic/paylogic-spa.git
+    git clone git@github.com:paylogic/single-page-frontoffice.git
 
     # Install requirements and run the application.
     # npm install will also run bower install.
     # If not, after npm install, run bower install manually.
-    cd paylogic-spa
+    cd single-page-frontoffice
     npm install
 
 ### Configure application
