@@ -71,3 +71,17 @@ Provide the filter with the resource you wish to translate and everything will b
     $filter('localize')(event.content.title) (in a script file)
 
 If there is no available translation, the language that you set in the configuration file as **default** will be used as the **fallback language**.
+
+Contact
+-------
+
+If you have questions, bug reports, suggestions, etc. please create an issue on the [GitHub project page](http://github.com/paylogic/single-page-frontoffice).
+
+License
+-------
+
+This software is licensed under the [MIT license](http://en.wikipedia.org/wiki/MIT_License).
+
+See [License](https://github.com/paylogic/single-page-frontoffice/blob/master/LICENSE).
+
+© 2015 Paylogic International.
