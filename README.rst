@@ -100,7 +100,25 @@ everything will be done automatically.
 
     event.
 
+Contact
+-------
+
+If you have questions, bug reports, suggestions, etc. please create an issue on
+the `GitHub project page`_.
+
+License
+-------
+
+This software is licensed under the `MIT license`_
+
+See `License`_
+
+© 2015 Paylogic International.
+
 .. _AngularJS: https://angularjs.org/
 .. _UIkit: http://getuikit.com/
 .. _angular-gettext: https://angular-gettext.rocketeer.be/
 .. _documentation here: https://angular-gettext.rocketeer.be/dev-guide/annotate/
+.. _GitHub project page: http://github.com/paylogic/single-page-frontoffice
+.. _MIT license: http://en.wikipedia.org/wiki/MIT_License
+.. _License: https://github.com/paylogic/single-page-frontoffice/blob/master/LICENSE
