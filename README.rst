@@ -16,6 +16,8 @@ Wondering how easy it can be? Just **4 steps**!
 And click confirm! You have just completed the easiest purchasing
 process of your life!
 
+You can find the documentation for the API here: `Paylogic Shopping Service Docs`_
+
 Running it locally
 ------------------
 
@@ -117,6 +119,7 @@ See `License`_
 
 .. _AngularJS: https://angularjs.org/
 .. _UIkit: http://getuikit.com/
+.. _Paylogic Shopping Service Docs: https://shopping-api-docs.sandbox.paylogic.com/index.html
 .. _angular-gettext: https://angular-gettext.rocketeer.be/
 .. _documentation here: https://angular-gettext.rocketeer.be/dev-guide/annotate/
 .. _GitHub project page: http://github.com/paylogic/single-page-frontoffice
