@@ -1,7 +1,11 @@
 language: node_js
 node_js:
   - "0.10"
-before_script:
-  - npm install -g bower
+before_install:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - npm install -g karma bower gulp
+  - bower install
+  - npm install
 script:
   - node_modules/karma/bin/karma start test/karma.conf.js --single-run --browsers PhantomJS
