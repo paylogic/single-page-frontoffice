@@ -30,7 +30,7 @@ module.exports = function (config) {
     },
 
     plugins: [
-      'karma-chrome-launcher',
+      'karma-phantomjs-launcher',
       'karma-jasmine',
       'karma-ng-html2js-preprocessor',
       'karma-coffee-preprocessor'
@@ -42,7 +42,7 @@ module.exports = function (config) {
 
     frameworks: ['jasmine'],
 
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
 
     junitReporter: {
       outputFile: 'test_out/unit.xml',
