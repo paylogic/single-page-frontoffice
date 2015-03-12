@@ -1,6 +1,9 @@
 Paylogic single page frontoffice
 ================================
 
+.. image:: https://travis-ci.org/paylogic/single-page-frontoffice.svg?branch=master
+    :target: https://travis-ci.org/paylogic/single-page-frontoffice
+
 A single page application that uses the Paylogic Shopping Service API. A
 simple and fast way to buy tickets!
 
