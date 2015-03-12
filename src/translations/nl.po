@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: Paylogic\n"
+"Last-Translator: Orestis Ioakeimidis <o.ioakeimidis@gmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr "Adres"
 msgid "Back to events list"
 msgstr "Terug naar de evenementen lijst"
 
-#: eventList.html:38
+#: event_list.html:38
 msgid "Buy tickets"
 msgstr "Kaartjes kopen"
 
@@ -35,7 +35,7 @@ msgstr "Kaartjes kopen"
 msgid "City"
 msgstr "Stad"
 
-#: personal_info.html:104
+#: personal_info.html:115
 msgid "Confirm and procceed"
 msgstr "Bevestigen en doorgaan"
 
@@ -53,6 +53,7 @@ msgstr "E-mailadres"
 
 #: overview.html:15
 #: overview.html:30
+#: personal_info.html:103
 #: personal_info.html:15
 #: personal_info.html:25
 #: personal_info.html:39
@@ -77,6 +78,10 @@ msgstr "Geslacht"
 msgid "Grand total"
 msgstr "Totaal"
 
+#: personal_info.html:100
+msgid "I accept the"
+msgstr "Ik accepteer de"
+
 #: personal_info.html:12
 msgid "Last name"
 msgstr "Achternaam"
@@ -85,7 +90,7 @@ msgstr "Achternaam"
 msgid "Loading event data..."
 msgstr "Laden event gegevens..."
 
-#: eventList.html:3
+#: event_list.html:3
 msgid "Loading events..."
 msgstr "Laden evenementen..."
 
@@ -105,7 +110,7 @@ msgstr "Betalingsmethode"
 msgid "Personal info"
 msgstr "Persoonlijke info"
 
-#: personal_info.html:102
+#: personal_info.html:113
 msgid "Placing order..."
 msgstr "Order plaatsen..."
 
@@ -125,11 +130,15 @@ msgstr "Selecteer een verzendmethode"
 msgid "Postal code"
 msgstr "Postcode"
 
+#: personal_info.html:100
+msgid "Privacy Policy"
+msgstr "Privacybeleid"
+
 #: overview.html:39
 msgid "Products total"
 msgstr "Producten totaal"
 
-#: personal_info.html:103
+#: personal_info.html:114
 msgid "Redirecting you to payment page..."
 msgstr "U wordt omgeleid naar betaalpagina..."
 
@@ -157,6 +166,10 @@ msgstr "Uitverkocht"
 msgid "Start selling tickets"
 msgstr "Beginnen met de verkoop tickets"
 
+#: personal_info.html:100
+msgid "Terms and Conditions"
+msgstr "Termen en voorwaarden"
+
 #: thank_you.html:3
 msgid "Thank you!"
 msgstr "Dankjewel!"
@@ -164,6 +177,14 @@ msgstr "Dankjewel!"
 #: index.html:37
 msgid "This website uses Paylogic for ticketing service. Do you also want to sell tickets for your event?"
 msgstr "Deze website maakt gebruik van Paylogic ticketing service. Wilt u ook om tickets te verkopen voor uw evenement?"
+
+#: personal_info.html:100
+msgid "and"
+msgstr "en"
+
+#: personal_info.html:100
+msgid "of Paylogic"
+msgstr "van Paylogic"
 
 #~ msgid "Select language"
 #~ msgstr "Kies een taal"

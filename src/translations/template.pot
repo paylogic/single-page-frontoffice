@@ -20,7 +20,7 @@ msgstr ""
 msgid "Back to events list"
 msgstr ""
 
-#: eventList.html:38
+#: event_list.html:38
 msgid "Buy tickets"
 msgstr ""
 
@@ -28,7 +28,7 @@ msgstr ""
 msgid "City"
 msgstr ""
 
-#: personal_info.html:104
+#: personal_info.html:115
 msgid "Confirm and procceed"
 msgstr ""
 
@@ -46,6 +46,7 @@ msgstr ""
 
 #: overview.html:15
 #: overview.html:30
+#: personal_info.html:103
 #: personal_info.html:15
 #: personal_info.html:25
 #: personal_info.html:39
@@ -70,6 +71,10 @@ msgstr ""
 msgid "Grand total"
 msgstr ""
 
+#: personal_info.html:100
+msgid "I accept the"
+msgstr ""
+
 #: personal_info.html:12
 msgid "Last name"
 msgstr ""
@@ -78,7 +83,7 @@ msgstr ""
 msgid "Loading event data..."
 msgstr ""
 
-#: eventList.html:3
+#: event_list.html:3
 msgid "Loading events..."
 msgstr ""
 
@@ -98,7 +103,7 @@ msgstr ""
 msgid "Personal info"
 msgstr ""
 
-#: personal_info.html:102
+#: personal_info.html:113
 msgid "Placing order..."
 msgstr ""
 
@@ -118,11 +123,15 @@ msgstr ""
 msgid "Postal code"
 msgstr ""
 
+#: personal_info.html:100
+msgid "Privacy Policy"
+msgstr ""
+
 #: overview.html:39
 msgid "Products total"
 msgstr ""
 
-#: personal_info.html:103
+#: personal_info.html:114
 msgid "Redirecting you to payment page..."
 msgstr ""
 
@@ -150,10 +159,22 @@ msgstr ""
 msgid "Start selling tickets"
 msgstr ""
 
+#: personal_info.html:100
+msgid "Terms and Conditions"
+msgstr ""
+
 #: thank_you.html:3
 msgid "Thank you!"
 msgstr ""
 
 #: index.html:37
 msgid "This website uses Paylogic for ticketing service. Do you also want to sell tickets for your event?"
+msgstr ""
+
+#: personal_info.html:100
+msgid "and"
+msgstr ""
+
+#: personal_info.html:100
+msgid "of Paylogic"
 msgstr ""
