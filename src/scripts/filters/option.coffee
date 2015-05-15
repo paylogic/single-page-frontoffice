@@ -23,6 +23,6 @@ app.filter "option", ($filter) ->
       if $filter('price')(method.costs)
         "#{$filter('localize')(method.name)} (+ #{$filter('price')(method.costs)})"
       else
-        $filter('localize')(method.name)}
+        $filter('localize')(method.name)
     else
       null
