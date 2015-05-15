@@ -161,6 +161,7 @@ class BillController
     data = {}
     data.products = @content?.products
     data.consumer = @consumer
+    if @consumer then data.consumer.ip = '192.168.1.1'
     data.payment_method = @content?.payment_method?.uid
     data.shipping_method = @content?.shipping_method?.uid
     data

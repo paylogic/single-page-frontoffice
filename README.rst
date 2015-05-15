@@ -44,7 +44,8 @@ Paylogic can provide you with valid credentials.
 
 Place the credentials in the coffeescript file responsible for the
 application’s configuration ``/src/scripts/app.coffee``. The ``baseUrl``
-will be provided to you along with the credentials.
+will be provided to you along with the credentials and it must have
+a trailing slash.
 
 ::
 
@@ -75,9 +76,8 @@ Steps for translating static strings:
    ``node_modules/.bin/gulp extract-trans``. A ``.pot`` file will be
    created in the folder ``/src/translations``, containing all the
    annotated strings available for translation.
-3. Following the `documentation
-   here <https://angular-gettext.rocketeer.be/dev-guide/translate/>`__
-   and using the ``.pot`` file that was created in the previous step,
+3. Following the `documentation here`_ and using the ``.pot``
+   file that was created in the previous step,
    you can create files for every language you want to use.
    **Important!** You must save the language files in the
    ``/src/translations`` folder, where your ``.pot`` file exists.
@@ -103,7 +103,7 @@ everything will be done automatically.
     # Example
     # Resource: event.content.title = { en: 'Test Event', nl: 'Testevenement' }
 
-    event.
+    @$filter('localize')(event.content.title)
 
 Contact
 -------
@@ -124,7 +124,7 @@ See `License`_
 .. _UIkit: http://getuikit.com/
 .. _Paylogic Shopping Service Docs: https://shopping-api-docs.sandbox.paylogic.com/index.html
 .. _angular-gettext: https://angular-gettext.rocketeer.be/
-.. _documentation here: https://angular-gettext.rocketeer.be/dev-guide/annotate/
+.. _documentation here: https://angular-gettext.rocketeer.be/dev-guide/translate/
 .. _GitHub project page: http://github.com/paylogic/single-page-frontoffice
 .. _MIT license: http://en.wikipedia.org/wiki/MIT_License
 .. _License: https://github.com/paylogic/single-page-frontoffice/blob/master/LICENSE
