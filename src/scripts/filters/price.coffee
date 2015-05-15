@@ -21,7 +21,7 @@ app.filter "price", (currencies) ->
   @return [string|null] The formatted price or null.
   ###
   (costs, quantity=1, fractionSize=2) ->
-    if costs
+    if costs and costs.amount > 0
       # Calculate amount with quantity (used for product's total price).
       amount = costs.amount * quantity
       "#{currencies[costs.currency]} #{amount.toFixed(fractionSize)} #{costs.currency}"

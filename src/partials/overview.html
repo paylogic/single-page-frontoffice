@@ -36,23 +36,23 @@
   <img ng-if="bill.overviewLoader" class="uk-float-right" src="images/loader.gif" width="18" height="18" />
 </h3>
 <div ng-class="{'transparent': bill.overviewLoader}" class="uk-grid uk-grid-small" data-uk-grid-margin>
-  <div class="uk-width-2-3" translate>Products total</div>
-  <div class="uk-text-right uk-width-1-3">
+  <div ng-if="bill.content.product_total.amount > 0" class="uk-width-2-3" translate>Products total</div>
+  <div ng-if="bill.content.product_total.amount > 0" class="uk-text-right uk-width-1-3">
     <span ng-if="bill.content.product_total.amount" ng-bind="bill.content.product_total | price"></span>
     <span ng-if="!bill.content.product_total.amount">-</span>
   </div>
-  <div class="uk-width-2-3" translate>Service costs</div>
-  <div class="uk-text-right uk-width-1-3">
+  <div ng-if="bill.content.service_costs.amount > 0" class="uk-width-2-3" translate>Service costs</div>
+  <div ng-if="bill.content.service_costs.amount > 0" class="uk-text-right uk-width-1-3">
     <span ng-if="bill.content.service_costs.amount" ng-bind="bill.content.service_costs | price"></span>
     <span ng-if="!bill.content.service_costs.amount">-</span>
   </div>
-  <div class="uk-width-2-3" translate>Payment costs</div>
-  <div class="uk-text-right uk-width-1-3">
+  <div ng-if="bill.content.payment_method.costs.amount > 0" class="uk-width-2-3" translate>Payment costs</div>
+  <div ng-if="bill.content.payment_method.costs.amount > 0" class="uk-text-right uk-width-1-3">
     <span ng-if="bill.content.payment_method" ng-bind="bill.content.payment_method.costs | price"></span>
     <span ng-if="!bill.content.payment_method">-</span>
   </div>
-  <div class="uk-width-2-3" translate>Shipping costs</div>
-  <div class="uk-text-right uk-width-1-3">
+  <div ng-if="bill.content.shipping_method.costs.amount > 0" class="uk-width-2-3" translate>Shipping costs</div>
+  <div ng-if="bill.content.shipping_method.costs.amount > 0" class="uk-text-right uk-width-1-3">
     <span ng-if="bill.content.shipping_method" ng-bind="bill.content.shipping_method.costs | price"></span>
     <span ng-if="!bill.content.shipping_method">-</span>
   </div>

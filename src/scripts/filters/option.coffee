@@ -19,4 +19,10 @@ app.filter "option", ($filter) ->
   @return [string|null] The formatted option or null.
   ###
   (method) ->
-    if method then "#{$filter('localize')(method.name)} (+ #{$filter('price')(method.costs)})" else null
+    if method
+      if $filter('price')(method.costs)
+        "#{$filter('localize')(method.name)} (+ #{$filter('price')(method.costs)})"
+      else
+        $filter('localize')(method.name)}
+    else
+      null

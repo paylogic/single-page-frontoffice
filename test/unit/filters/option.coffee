@@ -37,6 +37,19 @@ describe "Filter: option", ->
     expect shipping
       .toEqual "E-Tickets (+ € 1.00 EUR)"
 
+  it "should return only the name, when amount in not greater than zero", ->
+    mockPaymentMethod =
+      "name":
+        "en": "Test Payment method"
+      "costs":
+        "amount": "0.00"
+        "currency": "EUR"
+
+    payment = filter("option")(mockPaymentMethod)
+
+    expect payment
+      .toEqual "Test Payment method"
+
   it "should return null, when no method is provided", ->
     payment = filter("option")("")
 

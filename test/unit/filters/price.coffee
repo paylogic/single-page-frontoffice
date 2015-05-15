@@ -35,6 +35,16 @@ describe "Filter: price", ->
     expect result
       .toEqual "€ 2.4800 EUR"
 
+  it "should return null, if amount in not greater than zero", ->
+    costs =
+      amount: "0.00"
+      currency: "EUR"
+
+    result = filter("price")(costs, 2)
+
+    expect result
+      .toBeNull()
+
   it "should return null, when no costs are provided", ->
     result = filter("price")("")
 
