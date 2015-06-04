@@ -18,11 +18,11 @@ class MainController
     @$document[0].title = @$filter('localize')(@defaults.docTitle)
     @loading = yes
     @EventService.events().then (response) =>
-        @events = response._embedded["shop:event"]
-      , (error) =>
-        @errorMessage = error.data?.message
-      .finally =>
-        @loading = no
+      @events = response._embedded["shop:event"]
+    , (error) =>
+      @errorMessage = error.data?.message
+    .finally =>
+      @loading = no
 
   ###
   Navigate to the event with the provided eventUid.

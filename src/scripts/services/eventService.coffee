@@ -28,8 +28,8 @@ app.service "EventService", (CacheService, paylogicShoppingService) ->
   ###
   singleEvent: (eventUid) ->
     paylogicShoppingService.events.query
-        eventUid: if eventUid then eventUid else @get "eventUid"
-      .$promise
+      eventUid: if eventUid then eventUid else @get "eventUid"
+    .$promise
 
   ###
   Wrapper for the Cache Service get method.

@@ -94,8 +94,8 @@
     </div>
   </div>
 </div>
-<div class="uk-grid uk-grid-small uk-text-right" data-uk-grid-margin data-uk-grid-match>
-  <div class="uk-width-1-1">
+<div class="uk-grid uk-grid-small" data-uk-grid-margin data-uk-grid-match>
+  <div class="uk-width-1-1 uk-text-right">
     <span ng-if="bill.placingOrder" class="uk-display-inline-block uk-margin-small-right">
       <img src="images/loader.gif" width="18" height="18" />
     </span>
@@ -108,8 +108,8 @@
     </button>
   </div>
   <div class="uk-width-1-1 uk-text-small">
+    <input ng-model="billForm.tos" name="tos" type="checkbox" class="uk-margin-small-right" required />
     <translate>I accept the</translate> <a href="http://www.paylogic.com/en/about-paylogic/terms-and-conditions/" target="_blank" translate>Terms and Conditions</a> <translate>and</translate> <a href="http://www.paylogic.com/en/about-paylogic/privacy-policy/" target="_blank" translate>Privacy Policy</a> <translate>of Paylogic</translate>
-    <input ng-model="billForm.tos" name="tos" type="checkbox" required />
     <div ng-messages="billForm.tos.$error" ng-if="billForm.$submitted">
       <div ng-message="required" class="uk-form-help-block uk-text-danger uk-text-small">
         <translate>Field is required</translate>

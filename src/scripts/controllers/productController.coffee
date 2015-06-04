@@ -28,7 +28,7 @@ class ProductController
   increaseQty: ->
     # It cannot exceeds the maximum per order. Show a notification.
     if @countQuantities() is @$scope.content.max_per_order
-      $.UIkit.notify "<i class='uk-icon-warning uk-margin-small-right'></i>#{@$filter('localize')(@messages['MAX_PER_ORDER_EXCEEDED'])}",
+      $.UIkit.notify "<i class='uk-icon-warning'></i> #{@$filter('localize')(@messages['MAX_PER_ORDER_EXCEEDED'])}",
         status: "danger"
         timeout: 3000
       return

@@ -16,13 +16,13 @@ class EventController
   constructor: (@$scope, @$location, @$document, @$filter, @EventService, @BillService, @defaults) ->
     @loading = yes
     @EventService.singleEvent().then (response) =>
-        @content = response
-        @$document[0].title = @$filter('localize')(@content.title)
-        @$scope.$broadcast "eventLoaded", @content
-      , (error) =>
-        @errorMessage = error.data?.message
-      .finally =>
-        @loading = no
+      @content = response
+      @$document[0].title = @$filter('localize')(@content.title)
+      @$scope.$broadcast "eventLoaded", @content
+    , (error) =>
+      @errorMessage = error.data?.message
+    .finally =>
+      @loading = no
 
   ###
   Clear event and bill data from the cache and navigate back

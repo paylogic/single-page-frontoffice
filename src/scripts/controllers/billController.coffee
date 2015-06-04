@@ -109,18 +109,17 @@ class BillController
   ###
   performBillRequest: (data) ->
     @overviewLoader = yes
-    @BillService.refresh data
-      .then (response) =>
-        @content = response
-        @saveDataInCache()
-        @updateDataFromCache()
-      , (error) =>
-        $.UIkit.notify "<i class='uk-icon-warning uk-margin-small-right'></i>#{@$filter('localize')(@messages[error.data?.type])}",
-          status: "danger"
-          timeout: 3000
-      .finally =>
-        @overviewLoader = no
-        @$scope.$broadcast "billRefreshed"
+    @BillService.refresh(data).then (response) =>
+      @content = response
+      @saveDataInCache()
+      @updateDataFromCache()
+    , (error) =>
+      $.UIkit.notify "<i class='uk-icon-warning'></i> #{@$filter('localize')(@messages[error.data?.type])}",
+        status: "danger"
+        timeout: 3000
+    .finally =>
+      @overviewLoader = no
+      @$scope.$broadcast "billRefreshed"
 
   ###
   Continue with the order request if form is valid.
@@ -139,18 +138,17 @@ class BillController
   performOrderRequest: (production) ->
     @placingOrder = yes
     @$scope.confirmBtnText = "PLACING_ORDER"
-    @BillService.order @prepareOrderData()
-      .then (response) =>
-        @BillService.clear()
-        @$scope.confirmBtnText = "REDIRECTING"
-        # Redirect only if it is not called by a unit test.
-        if production then @$window.location.href = response._links.payment_url.href
-      , (error) =>
-        @placingOrder = no
-        @$scope.confirmBtnText = "DEFAULT"
-        $.UIkit.notify "<i class='uk-icon-warning uk-margin-small-right'></i>#{@$filter('localize')(@messages[error.data?.type])}",
-          status: "danger"
-          timeout: 3000
+    @BillService.order(@prepareOrderData()).then (response) =>
+      @BillService.clear()
+      @$scope.confirmBtnText = "REDIRECTING"
+      # Redirect only if it is not called by a unit test.
+      if production then @$window.location.href = response._links.payment_url.href
+    , (error) =>
+      @placingOrder = no
+      @$scope.confirmBtnText = "DEFAULT"
+      $.UIkit.notify "<i class='uk-icon-warning'></i> #{@$filter('localize')(@messages[error.data?.type])}",
+        status: "danger"
+        timeout: 3000
 
   ###
   Helper to prepare the order data for the request.
@@ -161,7 +159,6 @@ class BillController
     data = {}
     data.products = @content?.products
     data.consumer = @consumer
-    if @consumer then data.consumer.ip = '192.168.1.1'
     data.payment_method = @content?.payment_method?.uid
     data.shipping_method = @content?.shipping_method?.uid
     data
